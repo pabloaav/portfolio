@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Pablo Aguirre · DevOps en evolución</title>
+  <title>Pablo Aguirre · DevOps Portfolio + CV Harvard Style</title>
   <style>
     * {
       margin: 0;
@@ -19,7 +19,6 @@
       scroll-behavior: smooth;
     }
 
-    /* acentos violeta/indigo */
     :root {
       --accent: #7C3AED;
       --accent-glow: #a855f7;
@@ -35,7 +34,7 @@
       padding: 2rem 1.5rem;
     }
 
-    /* header / hero */
+    /* hero */
     .hero {
       text-align: center;
       padding: 3rem 1rem 2rem;
@@ -72,7 +71,7 @@
       color: #b9c3e6;
     }
 
-    /* secciones */
+    /* secciones generales */
     .section {
       margin-bottom: 3.5rem;
       background: var(--surface);
@@ -99,10 +98,6 @@
       padding-left: 1rem;
     }
 
-    .section-title i {
-      font-size: 1.6rem;
-    }
-
     /* skills chips */
     .skills-cloud {
       display: flex;
@@ -125,10 +120,9 @@
     .skill-chip:hover {
       background: rgba(124, 58, 237, 0.3);
       transform: translateY(-2px);
-      border-color: var(--accent);
     }
 
-    /* proyectos cards grid */
+    /* proyectos grid */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -190,7 +184,6 @@
       font-size: 0.7rem;
       font-weight: 500;
       color: #b9a9ff;
-      letter-spacing: 0.3px;
     }
 
     .card-link {
@@ -208,13 +201,166 @@
       gap: 0.6rem;
     }
 
-    /* footer */
+    /* ESTILOS CV ESTILO HARVARD (hoja A4 dentro de SPA) */
+    .cv-harvard-section {
+      background: #fefefe;
+      border-radius: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.5);
+      transition: all 0.2s;
+    }
+
+    .cv-card {
+      background: white;
+      color: #1e1a2f;
+      border-radius: 1.8rem;
+      overflow: hidden;
+      padding: 2rem 2rem 2rem 2rem;
+      font-family: 'Segoe UI', 'Inter', system-ui, sans-serif;
+    }
+
+    /* simulación de hoja A4 impresa pero responsive */
+    .cv-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .cv-header {
+      text-align: center;
+      border-bottom: 2px solid #2d2a5e;
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cv-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #111;
+      letter-spacing: -0.5px;
+    }
+
+    .cv-contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: #2c3e66;
+    }
+
+    .cv-contact span {
+      background: #f0f2f8;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+    }
+
+    .cv-summary {
+      background: #f8f9fe;
+      padding: 1rem 1.2rem;
+      border-radius: 1rem;
+      margin-bottom: 1.8rem;
+      font-size: 0.95rem;
+      border-left: 4px solid #7C3AED;
+      color: #1f2937;
+    }
+
+    .cv-section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #4c1d95;
+      border-bottom: 2px solid #c4b5fd;
+      margin: 1.5rem 0 1rem 0;
+      padding-bottom: 0.3rem;
+    }
+
+    .job-entry {
+      margin-bottom: 1.4rem;
+    }
+
+    .job-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .job-title {
+      font-size: 1rem;
+      color: #4c1d95;
+    }
+
+    .job-date {
+      font-weight: normal;
+      color: #4b5563;
+      font-size: 0.8rem;
+    }
+
+    .job-company {
+      font-weight: 600;
+      margin: 0.2rem 0 0.4rem 0;
+      color: #2d3e6e;
+    }
+
+    .job-list {
+      padding-left: 1.2rem;
+      margin-top: 0.4rem;
+    }
+
+    .job-list li {
+      margin-bottom: 0.3rem;
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+
+    .skills-badge-cv {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.5rem 0 1rem 0;
+    }
+
+    .badge-cv {
+      background: #ede9fe;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #4c1d95;
+    }
+
+    .two-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 700px) {
+      .two-columns {
+        grid-template-columns: 1fr;
+      }
+      .cv-card {
+        padding: 1.2rem;
+      }
+      .container {
+        padding: 1rem;
+      }
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .section {
+        padding: 1.2rem;
+      }
+    }
+
     .footer {
-      margin-top: 3rem;
+      margin-top: 2rem;
       text-align: center;
       padding: 1.8rem;
       border-top: 1px solid rgba(124, 58, 237, 0.3);
-      font-size: 0.95rem;
     }
 
     .github-link {
@@ -234,177 +380,224 @@
     .github-link:hover {
       background: var(--accent);
       border-color: white;
-      transform: scale(1.02);
     }
 
-    /* sobre mí con datos reales actualizados */
     .about-text {
       font-size: 1.05rem;
-      margin-bottom: 0.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
     }
 
     .highlight {
       color: #c084fc;
       font-weight: 500;
     }
-
-    .role {
-      font-size: 1.2rem;
-      font-weight: 600;
-      background: linear-gradient(120deg, #ddd6fe, #a78bfa);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    /* responsive */
-    @media (max-width: 700px) {
-      .container {
-        padding: 1rem;
-      }
-      .hero h1 {
-        font-size: 1.9rem;
-      }
-      .section {
-        padding: 1.2rem;
-      }
-      .section-title {
-        font-size: 1.5rem;
-      }
-    }
   </style>
 </head>
 <body>
 <div class="container">
-  <!-- Hero -->
+  <!-- Hero principal -->
   <div class="hero">
     <h1>Pablo Augusto Aguirre Vicentin</h1>
     <div class="badge">🚀 Aprendiendo DevOps · Ingeniería de plataforma</div>
     <p>Transformando experiencia en desarrollo hacia la cultura DevOps | Semi Senior Software Engineer</p>
   </div>
 
-  <!-- Sobre mí -->
+  <!-- Sobre mí actualizado -->
   <div class="section">
-    <div class="section-title">
-      <span>🧑‍💻</span> Sobre mí
-    </div>
+    <div class="section-title"><span>🧑‍💻</span> Sobre mí</div>
     <div class="about-text">
-      <p><span class="role">🔹 Semi Senior Software Engineer</span> con sólida trayectoria en desarrollo backend, arquitectura y gestión de proyectos. Actualmente estoy enfocado en la adopción de prácticas <span class="highlight">DevOps</span>, infraestructura como código y automatización de pipelines.</p>
-      <p>💡 Licenciado en Sistemas de la Información (UNNE). Experiencia en <strong>PHP/Laravel, Golang, Vue.js, SQL, integración continua</strong> y liderazgo técnico. He coordinado equipos y desarrollado sistemas críticos como pasarelas de pago, digitalización de expedientes y backoffice. Mi próximo paso: dominar el ecosistema cloud nativo, orquestación con K8s y pipelines CI/CD robustos.</p>
-      <p>🌱 Enfoque actual: <strong>Linux, Docker, CI/CD, Kubernetes, Terraform</strong> — preparándome para llevar mi perfil a una ingeniería de plataforma moderna.</p>
+      <p><strong>Semi Senior Software Engineer</strong> con amplia experiencia en desarrollo backend, gestión de proyectos y arquitectura. Actualmente en transición hacia <span class="highlight">DevOps</span>, automatización y cloud nativo.</p>
+      <p>💼 Licenciado en Sistemas de la Información (UNNE) + Analista Programador. He liderado equipos, desarrollado pasarelas de pago, sistemas de expedientes digitales y backoffices con Laravel, Vue, Golang y PHP.</p>
+      <p>🌱 Ahora enfocado en: <strong>Linux, Docker, CI/CD, Kubernetes, Terraform</strong> para evolucionar hacia ingeniería de plataforma.</p>
     </div>
   </div>
 
-  <!-- Skills que voy a aprender (devops stack) -->
+  <!-- Skills que voy a aprender -->
   <div class="section">
-    <div class="section-title">
-      <span>🛠️</span> Skills que voy a aprender
-    </div>
+    <div class="section-title"><span>🛠️</span> Skills que voy a aprender</div>
     <div class="skills-cloud">
       <span class="skill-chip">🐧 Linux</span>
       <span class="skill-chip">🐳 Docker</span>
-      <span class="skill-chip">⚙️ CI/CD (GitHub Actions / GitLab)</span>
+      <span class="skill-chip">⚙️ CI/CD</span>
       <span class="skill-chip">☸️ Kubernetes (K8s)</span>
       <span class="skill-chip">🏗️ Terraform</span>
     </div>
-    <p style="margin-top: 1.2rem; font-size: 0.9rem; color: #b9c3e6;">+ Monitoreo, observabilidad, GitOps y cloud (AWS/Azure) en progreso.</p>
   </div>
 
-  <!-- Proyectos: 2 placeholders + proyecto REAL Expedientes (mejorado con funcionalidades) -->
+  <!-- Proyectos (incluyendo expedientes real) -->
   <div class="section">
-    <div class="section-title">
-      <span>📁</span> Proyectos destacados
-    </div>
+    <div class="section-title"><span>📁</span> Proyectos destacados</div>
     <div class="projects-grid">
-      
-      <!-- PROYECTO REAL: SISTEMA DE EXPEDIENTES (de github.com/pabloaav/expedientes) -->
+      <!-- Proyecto real: expedientes -->
       <div class="card">
         <div class="card-icon">📄⚡</div>
         <h3>Expedientes Digitales</h3>
-        <p>Sistema de gestión documental y logística administrativa. Desarrollo en <strong>Laravel + Blade + JavaScript</strong> con arquitectura MVC, optimización de flujos de trabajo interno, control de trazabilidad y búsqueda avanzada de expedientes.</p>
-        <div class="card-tech">
-          <span class="tech-tag">PHP 8</span>
-          <span class="tech-tag">Laravel</span>
-          <span class="tech-tag">MySQL</span>
-          <span class="tech-tag">JavaScript/Blade</span>
-          <span class="tech-tag">Tailwind/Less</span>
-        </div>
-        <p style="font-size:0.85rem; margin-top: 0;">✨ <strong>Hitos clave:</strong> digitalización de procesos internos, módulo de gestión de usuarios y roles, generación de reportes, estructura escalable basada en repositorios. Implementado en entorno productivo para optimizar la logística documental.</p>
-        <a href="https://github.com/pabloaav/expedientes" target="_blank" class="card-link" rel="noopener noreferrer">🔗 Ver repositorio →</a>
+        <p>Sistema de gestión documental y logística. <strong>Laravel + Blade + JS</strong>, arquitectura MVC, trazabilidad, roles, búsqueda avanzada. Implementado en producción para optimizar procesos administrativos.</p>
+        <div class="card-tech"><span class="tech-tag">PHP/Laravel</span><span class="tech-tag">MySQL</span><span class="tech-tag">JS/Blade</span></div>
+        <a href="https://github.com/pabloaav/expedientes" target="_blank" class="card-link">🔗 Ver repositorio →</a>
       </div>
-
-      <!-- Proyecto placeholder 1: infra como código (demo conceptual) -->
       <div class="card">
         <div class="card-icon">🏗️</div>
         <h3>Infraestructura como Código (Lab)</h3>
-        <p>Entorno de pruebas con Terraform y Docker Compose para desplegar stacks locales. Enfoque en replicabilidad y automatización de entornos devops.</p>
-        <div class="card-tech">
-          <span class="tech-tag">Terraform</span>
-          <span class="tech-tag">Docker</span>
-          <span class="tech-tag">YAML</span>
-        </div>
-        <p><em>Work in progress</em> – Implementación de módulos AWS simulados y orquestación de contenedores.</p>
-        <a href="#" class="card-link" onclick="return alert('🚧 Demo en construcción. Próximamente más detalles en GitHub.');">🔗 Explorar avance →</a>
+        <p>Entorno con Terraform + Docker Compose para despliegues reproducibles. Enfoque DevOps.</p>
+        <div class="card-tech"><span class="tech-tag">Terraform</span><span class="tech-tag">Docker</span></div>
+        <a href="#" class="card-link" onclick="return alert('🚧 Demo en construcción. Próximamente en GitHub.');">🔗 Explorar avance →</a>
       </div>
-
-      <!-- Proyecto placeholder 2: CI/CD pipeline sandbox -->
       <div class="card">
         <div class="card-icon">⚙️🔄</div>
         <h3>Pipeline CI/CD con GitHub Actions</h3>
-        <p>Proyecto académico/autodidacta: automatización de tests, build de imagen Docker y despliegue simulado en kind (K8s local).</p>
-        <div class="card-tech">
-          <span class="tech-tag">GitHub Actions</span>
-          <span class="tech-tag">Docker</span>
-          <span class="tech-tag">K3s</span>
-        </div>
-        <p>Ejemplo de integración continua con linting, pruebas unitarias y despliegue continuo en clúster local.</p>
-        <a href="#" class="card-link" onclick="return alert('📦 Repositorio público en preparación: pabloaav/ci-cd-lab. Estará disponible pronto.');">🔗 Ver planeación →</a>
+        <p>Automatización de tests, build de imagen Docker y despliegue en kind (K8s local).</p>
+        <div class="card-tech"><span class="tech-tag">GitHub Actions</span><span class="tech-tag">Docker/K3s</span></div>
+        <a href="#" class="card-link" onclick="return alert('📦 Repositorio público en preparación: pabloaav/ci-cd-lab');">🔗 Ver planeación →</a>
       </div>
     </div>
   </div>
 
-  <!-- Footer con GitHub -->
+  <!-- NUEVA SECCIÓN: CV ESTILO HARVARD (hoja A4 dentro de SPA) con TODOS los datos del CV antiguo -->
+  <div class="cv-harvard-section">
+    <div class="cv-card">
+      <div class="cv-inner">
+        <div class="cv-header">
+          <h1>Pablo Augusto Aguirre Vicentin</h1>
+          <div class="cv-contact">
+            <span>📞 (379) 4234621</span>
+            <span>✉️ pablovicentin84@gmail.com</span>
+            <span>📍 Caribe 3188 - Corrientes, Argentina</span>
+            <span>🔗 github.com/pabloaav</span>
+          </div>
+        </div>
+
+        <div class="cv-summary">
+          <strong>🎯 Perfil profesional</strong><br>
+          Licenciado en Sistemas de la Información · Analista Programador Universitario · Técnico en Administración de Empresas.
+          SSR Backend / FullStack Engineer con experiencia en coordinación de proyectos, desarrollo de pasarelas de pago, sistemas de gestión documental y digitalización. Apasionado por las buenas prácticas, metodologías ágiles (Scrum) y actualmente en ruta hacia la especialización DevOps.
+        </div>
+
+        <!-- EXPERIENCIA LABORAL completa -->
+        <div class="cv-section-title">💼 Experiencia profesional</div>
+        
+        <div class="job-entry">
+          <div class="job-header"><span class="job-title">Desarrollador FullStack / Project Manager</span><span class="job-date">2020 – Enero 2024</span></div>
+          <div class="job-company">Corrientes Telecomunicaciones SAPEM (TelCo) · Área Desarrollo</div>
+          <ul class="job-list">
+            <li>Desarrollo de pasarela de pagos, backoffice con Vue.js y sistemas de administración de cuentas y usuarios.</li>
+            <li>Implementación de frontend y backend con Laravel + Livewire para sistema de participación ciudadana y gestión administrativa interna.</li>
+            <li>Testing con PHPUnit y Javascript, uso de metodologías ágiles (Scrum) con Jira Software y Azure DevOps.</li>
+            <li>Digitalización de documentos y creación de sistemas internos de expedientes.</li>
+          </ul>
+        </div>
+
+        <div class="job-entry">
+          <div class="job-header"><span class="job-title">Coordinador del área de archivo / Tester funcional</span><span class="job-date">2006 – 2010</span></div>
+          <div class="job-company">Servicio de logística para Aguas de Corrientes S.A.</div>
+          <ul class="job-list">
+            <li>Responsable de captación, clasificación, carga y resguardo de datos y archivos.</li>
+            <li>Control de stock de insumos informáticos, mantenimiento de sistemas y soporte técnico local.</li>
+            <li>Testing funcional y supervisión de sistemas informáticos.</li>
+          </ul>
+        </div>
+
+        <div class="job-entry">
+          <div class="job-header"><span class="job-title">Programador ABAP / Golang & Backend</span><span class="job-date">2022 – 2023</span></div>
+          <div class="job-company">Proyectos de capacitación y desarrollo</div>
+          <ul class="job-list">
+            <li>Programación SAP - ABAP, desarrollo en Golang: POO, concurrencia, patrones de diseño, uso de GORM y Fiber.</li>
+            <li>Construcción de APIs RESTful y aplicaciones de consola con Node.js.</li>
+          </ul>
+        </div>
+
+        <!-- EDUCACIÓN -->
+        <div class="cv-section-title">📖 Educación</div>
+        <div class="two-columns">
+          <div>
+            <strong>Licenciatura en Sistemas de la Información</strong><br>
+            FaCENA - UNNE<br>
+            <span style="font-size:0.8rem;">Analista Programador Universitario · Técnico en Administración de empresas</span>
+          </div>
+          <div>
+            <strong>Capacitaciones destacadas</strong><br>
+            <span>✓ Cisco CCNA (Routing & Switching, Escalamiento de Redes) · 2016-2018</span><br>
+            <span>✓ Python Essentials (Python Institute) · 2020</span><br>
+            <span>✓ API RESTful · 2020</span><br>
+            <span>✓ Genexus 16 Junior Level · 2019</span><br>
+            <span>✓ Networking Intensivo, Redes de fibra óptica (TelCo) · 2020</span><br>
+            <span>✓ Jornadas de Informática Forense, Despliegue Asterisk, Testing automatizado</span>
+          </div>
+        </div>
+
+        <!-- LENGUAJES Y HERRAMIENTAS (completo del CV antiguo) -->
+        <div class="cv-section-title">🛠 Lenguajes & Herramientas</div>
+        <div class="skills-badge-cv">
+          <span class="badge-cv">PHP (Avanzado)</span><span class="badge-cv">Laravel / Livewire</span><span class="badge-cv">Java (Avanzado)</span>
+          <span class="badge-cv">Python (Intermedio)</span><span class="badge-cv">Golang (GORM/Fiber)</span><span class="badge-cv">C# (Medio)</span>
+          <span class="badge-cv">Vue.js / JavaScript</span><span class="badge-cv">Node.js</span><span class="badge-cv">HTML/CSS/XML/JSON</span>
+          <span class="badge-cv">SQL Server / MySQL</span><span class="badge-cv">Entity Framework + LINQ</span><span class="badge-cv">Eloquent ORM</span>
+          <span class="badge-cv">Git (GitHub/Bitbucket)</span><span class="badge-cv">Azure DevOps / Jira</span><span class="badge-cv">Docker / vmWare</span>
+          <span class="badge-cv">GNS3 / Packet Tracer</span><span class="badge-cv">Android Studio</span><span class="badge-cv">Enterprise Architect</span>
+        </div>
+
+        <!-- CURSOS ADICIONALES Y OTROS LOGROS -->
+        <div class="cv-section-title">📚 Cursos & formación complementaria</div>
+        <ul class="job-list" style="margin-bottom: 0.5rem;">
+          <li>Red Metropolitana de fibra óptica – TelCo SAPEM · Julio 2020</li>
+          <li>Networking Intensivo · Abril 2020</li>
+          <li>API RESTful · 2020</li>
+          <li>Python Essentials – Python Institute · 2020</li>
+          <li>Sistema de gestión de ventas (Udemy) · 2019</li>
+          <li>Genexus 16 Junior Level · 2019</li>
+          <li>Redes Informáticas y cableado estructurado · 2019</li>
+          <li>Jornadas de Informática forense y cibercrimen · FaCENA 2019</li>
+          <li>Despliegue de central de telefonía IP con Asterisk · 2019</li>
+          <li>CCNA Routing and Switching (2016-2018) · Cisco</li>
+          <li>Testing automatizado · 2016</li>
+          <li>Microsoft Excel 2013 · 2015</li>
+          <li>Simulación y emulación de redes: GNS3, Packet Tracer, MatLab</li>
+        </ul>
+
+        <div class="cv-section-title">🌐 Idiomas & adicionales</div>
+        <div class="skills-badge-cv">
+          <span class="badge-cv">Español nativo</span>
+          <span class="badge-cv">Inglés técnico (lectura comprensiva)</span>
+          <span class="badge-cv">Metodologías Ágiles: Scrum, Kanban</span>
+        </div>
+        <div style="margin-top: 1rem; font-size: 0.75rem; text-align: center; border-top: 1px solid #e2e8f0; padding-top: 1rem; color:#4a5568;">
+          📄 Currículum actualizado con experiencia fullstack, coordinación de proyectos y habilidades en evolución DevOps.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer GitHub -->
   <div class="footer">
     <a href="https://github.com/pabloaav" target="_blank" class="github-link" rel="noopener noreferrer">
       <span>🐙</span> github.com/pabloaav
     </a>
-    <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.7;">✨ Portfolio en constante evolución — enfocado en DevOps y modernización de skills</p>
+    <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.7;">✨ Portfolio interactivo + CV formato Harvard · En constante evolución DevOps</p>
   </div>
 </div>
 
-<!-- pequeño script interactivo para dar dinamismo moderno sin dependencias -->
 <script>
+  // Interacción ligera para mejorar experiencia
   (function() {
-    // agregar efecto sutil de cambio de acento en cards al hacer hover y tooltip nativo
-    console.log("Portfolio Pablo Aguirre - DevOps journey");
-    
-    // resaltar skills con efecto dinámico (sin librerías)
+    console.log("Portfolio Pablo Aguirre - CV Harvard integrado");
     const chips = document.querySelectorAll('.skill-chip');
     chips.forEach(chip => {
       chip.addEventListener('click', () => {
-        // efecto suave: solo feedback visual, muestra skill en consola
         console.log(`🎯 Skill en foco: ${chip.innerText}`);
-        chip.style.transform = 'scale(0.98)';
+        chip.style.transform = 'scale(0.96)';
         setTimeout(() => chip.style.transform = '', 150);
       });
     });
-
-    // small easter egg: mostrar mensaje inspiracional al hacer doble click en hero
+    // doble click en hero para mensaje
     const hero = document.querySelector('.hero');
     if(hero) {
       hero.addEventListener('dblclick', () => {
-        alert('🚀 "La infraestructura como código es el nuevo superpoder" — Pablo, aprendiendo DevOps');
+        alert('🚀 De Semi Senior Software Engineer a DevOps Engineer — construyendo puentes entre desarrollo e infraestructura.');
       });
     }
-
-    // añadir marca de tiempo implícita para estilo moderno
-    const footer = document.querySelector('.footer p');
-    if(footer && !footer.innerHTML.includes('2025')) {
-      const year = new Date().getFullYear();
-      footer.innerHTML = `✨ Portfolio en constante evolución — enfocado en DevOps y modernización de skills • ${year}`;
+    const year = new Date().getFullYear();
+    const footerP = document.querySelector('.footer p');
+    if(footerP && !footerP.innerHTML.includes('2026')) {
+      footerP.innerHTML = `✨ Portfolio interactivo + CV formato Harvard · En constante evolución DevOps • ${year}`;
     }
   })();
 </script>
